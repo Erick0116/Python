@@ -4,7 +4,7 @@ Welcome to **Python Code Zone**! This collection of Python scripts has been crea
 
 ## Future Development
 
-I plan to develop additional scripts that can be useful and assist you in your project in the future. Contributions and feedback are always appreciated!
+I plan to develop more scripts that can be useful and assist you in your project in the future. Contributions and feedback are always appreciated!
 
 ## Conclusion
 
