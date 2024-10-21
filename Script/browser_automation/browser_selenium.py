@@ -8,8 +8,6 @@ driver = webdriver.Chrome()
 try:
     # Open Facebook
     driver.get("https://www.facebook.com")
-
-    # Wait for the page to load
     time.sleep(2)
 
     # Locate the email and password fields
@@ -23,13 +21,7 @@ try:
     # Click the login button
     login_button = driver.find_element(By.NAME, "login")
     login_button.click()
-
-    # Wait for a while to ensure the login process completes
     time.sleep(5)
-
-    # At this point, you should be logged in. You can add additional actions here.
 
 except Exception as e:
     print("An error occurred:", e)
-
-# The browser will remain open for you to observe the logged-in state.
