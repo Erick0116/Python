@@ -3,28 +3,33 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
-# Set up the WebDriver (e.g., for Chrome)
 driver = webdriver.Chrome()
 
 try:
-    # Open Google
-    driver.get("https://www.google.com")
+    # Open Facebook
+    driver.get("https://www.facebook.com")
 
-    # Locate the search box
-    search_box = driver.find_element(By.NAME, "q")
-
-    # Enter a search query
-    search_box.send_keys("Code With Mosh")
-    search_box.send_keys(Keys.RETURN)  # Press Enter
-
-    # Wait for results to load
+    # Wait for the page to load
     time.sleep(2)
 
-    # Find and print titles of search results
-    results = driver.find_elements(By.CSS_SELECTOR, 'h3')
-    for index, result in enumerate(results):
-        print(f"{index + 1}: {result.text}")
+    # Locate the email and password fields
+    email_field = driver.find_element(By.ID, "email")
+    password_field = driver.find_element(By.ID, "pass")
 
-finally:
-    # Close the browser
-    driver.quit()
+    # Enter your credentials
+    email_field.send_keys("your_email@example.com")  # Replace with your email
+    password_field.send_keys("your_password")          # Replace with your password
+
+    # Click the login button
+    login_button = driver.find_element(By.NAME, "login")
+    login_button.click()
+
+    # Wait for a while to ensure the login process completes
+    time.sleep(5)
+
+    # At this point, you should be logged in. You can add additional actions here.
+
+except Exception as e:
+    print("An error occurred:", e)
+
+# The browser will remain open for you to observe the logged-in state.
